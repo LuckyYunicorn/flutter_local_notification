@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_notification/home_screen.dart';
 import 'package:flutter_notification/local_notification.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await LocalNotification.localNotifications();
