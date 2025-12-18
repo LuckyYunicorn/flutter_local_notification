@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_notification/home_screen.dart';
-import 'package:flutter_notification/local_notification.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_notification/bloc/posts/post_bloc.dart';
+import 'package:flutter_notification/investment/home_screen.dart';
+import 'package:flutter_notification/notificaton/local_notification.dart';
+import 'package:flutter_notification/posts/screen/post_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,6 +16,7 @@ class NotificationApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: HomeScreen());
+    // return MaterialApp(debugShowCheckedModeBanner: false, home: HomeScreen());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: PostScreen());
   }
 }
