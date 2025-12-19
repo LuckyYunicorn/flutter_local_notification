@@ -7,10 +7,9 @@ sealed class PostEvent extends Equatable {
 }
 
 class FetchPost extends PostEvent {
-  // final int page;
-  // final int limit;
-  const FetchPost();
+  final bool resetPage;
+  const FetchPost({this.resetPage = false});
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [resetPage];
 }
 

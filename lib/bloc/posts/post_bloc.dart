@@ -18,6 +18,9 @@ class PostBloc extends Bloc<PostEvent, PostState> {
 
     emit(state.copyWith(isLoading: true));
     try {
+      if(event.resetPage){
+        emit(state.copyWith(postsList: [], page: 1,));
+      }
       print("page ${state.page} AND limit ${state.limit}");
       List<PostsModel>? posts = await PostsApi.getPosts(
         page: state.page,
@@ -35,6 +38,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
       } else {
         emit(state.copyWith(isLoading: false, hasMore: false));
       }
+
     } catch (e) {
       emit(state.copyWith(isLoading: false));
     }
